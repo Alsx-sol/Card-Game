@@ -1,0 +1,373 @@
+.game-background {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.game-title {
+    color: white;
+    font-size: 60px;
+    margin-top: 0.5rem;
+}
+
+.show-order {
+    padding-top: 1rem;
+    color: white;
+    font-size: 30px;
+}
+
+.bouton-tirer-cartes {
+    padding-left: 3rem;
+    padding-right: 3rem;
+    border: 0px;
+    border-radius: 25px;
+    font-size: 30px;
+    background-color: white;
+}
+
+.card {
+    height: 288px;
+    width: 212px;
+}
+
+.card-sort {
+    position: absolute;
+}
+
+.card-sort-body {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+    margin-bottom: 25rem;
+    position: relative;
+    right: 106px;
+}
+
+.body-position {
+    position: absolute;
+}
+
+.card-body {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 2rem;
+    margin-bottom: 10rem;
+}
+
+@keyframes left-card {
+    0% {
+        rotate: 5deg;
+    }
+    50% {
+        rotate: -15deg;
+    }
+    100% {
+        rotate: 5deg;
+    }
+}
+
+@keyframes right-card {
+    0% {
+        rotate: -5deg;
+    }
+    50% {
+        rotate: 15deg;
+    }
+    100% {
+        rotate: -5deg;
+    }
+}
+
+.title-card-left {
+    animation: infinite;
+    animation-name: left-card;
+    animation-duration: 5s;
+}
+
+.title-card-right {
+    animation: infinite;
+    animation-name: right-card;
+    animation-duration: 5s;
+}
+
+/* ------------Unveil the card animation------------------------ */
+/*   Refactorisation potentiel: Switch de CSS pour SASS pour faire tout ce qu'il y a en dessous avec une loop   */
+
+
+@keyframes card-1 {
+    from {
+        transform: none;
+    }
+    to {
+        transform: translate3d(-90px, 40px, 0) rotate(-55deg);
+    }
+}
+
+@keyframes card-2 {
+    from {
+        transform: none;
+    }
+    to {
+        transform: translate3d(-70px, 20px, 0) rotate(-40deg);
+    }
+}
+
+@keyframes card-3 {
+    from {
+        transform: none;
+    }
+    to {
+        transform: translate3d(-50px, 10px, 0) rotate(-25deg);
+    }
+}
+
+@keyframes card-4 {
+    from {
+        transform: none;
+    }
+    to {
+        transform: translate3d(-25px, 0, 0) rotate(-15deg);
+    }
+}
+
+@keyframes card-6 {
+    from {
+        transform: none;
+    }
+    to {
+        transform: translate3d(30px, 10px, 0) rotate(15deg);
+    }
+}
+
+@keyframes card-7 {
+    from {
+        transform: none;
+    }
+    to {
+        transform: translate3d(60px, 20px, 0) rotate(25deg);
+    }
+}
+
+@keyframes card-8 {
+    from {
+        transform: none;
+    }
+    to {
+        transform: translate3d(80px, 40px, 0) rotate(40deg);
+    }
+}
+
+@keyframes card-9 {
+    from {
+        transform: none;
+    }
+    to {
+        transform: translate3d(100px, 60px, 0) rotate(55deg);
+    }
+}
+
+@keyframes card-10 {
+    from {
+        transform: none;
+    }
+    to {   
+        transform: translate3d(130px, 70px, 0) rotate(65deg);
+    }
+}
+
+.card-1 {
+    animation: forwards;
+    animation-name: card-1;
+    animation-duration: 5s;
+}
+
+.card-2 {
+    animation: forwards;
+    animation-name: card-2;
+    animation-duration: 5s;
+}
+
+.card-3 {
+    animation: forwards;
+    animation-name: card-3;
+    animation-duration: 5s;
+}
+
+.card-4 {
+    animation: forwards;
+    animation-name: card-4;
+    animation-duration: 5s;
+}
+
+.card-6 {
+    animation: forwards;
+    animation-name: card-6;
+    animation-duration: 5s;
+}
+
+.card-7 {
+    animation: forwards;
+    animation-name: card-7;
+    animation-duration: 5s;
+}
+
+.card-8 {
+    animation: forwards;
+    animation-name: card-8;
+    animation-duration: 5s;
+}
+
+.card-9 {
+    animation: forwards;
+    animation-name: card-9;
+    animation-duration: 5s;
+}
+
+.card-10 {
+    animation: forwards;
+    animation-name: card-10;
+    animation-duration: 5s;
+}
+
+/*              ---------------Hide the card animation------------------                                  */
+/*   Refactorisation potentiel: Switch de CSS pour SASS pour faire tout ce qu'il y a en dessous avec une loop   */
+
+@keyframes card-1-2 {
+    from {
+        transform: translate3d(-90px, 40px, 0) rotate(-55deg);
+    }
+    to {
+        transform: translate3d(0, 0, 0) rotate(0deg);
+    }
+}
+
+@keyframes card-2-2 {
+    from {
+        transform: translate3d(-70px, 20px, 0) rotate(-40deg);
+    }
+    to {
+        transform: translate3d(0, 0, 0) rotate(0deg);
+    }
+}
+
+@keyframes card-3-2 {
+    from {
+        transform: translate3d(-50px, 10px, 0) rotate(-25deg);
+    }
+    to {
+        transform: translate3d(0, 0, 0) rotate(0deg);
+    }
+}
+
+@keyframes card-4-2 {
+    from {
+        transform: translate3d(-25px, 0, 0) rotate(-15deg);
+    }
+    to {
+        transform: translate3d(0, 0, 0) rotate(0deg);
+    }
+}
+
+@keyframes card-6-2 {
+    from {
+        transform: translate3d(30px, 10px, 0) rotate(15deg);
+    }
+    to {
+        transform: translate3d(0, 0, 0) rotate(0deg);
+    }
+}
+
+@keyframes card-7-2 {
+    from {
+        transform: translate3d(60px, 20px, 0) rotate(25deg);
+    }
+    to {
+        transform: translate3d(0, 0, 0) rotate(0deg);
+    }
+}
+
+@keyframes card-8-2 {
+    from {
+        transform: translate3d(80px, 40px, 0) rotate(40deg);
+    }
+    to {
+        transform: translate3d(0, 0, 0) rotate(0deg);
+    }
+}
+
+@keyframes card-9-2 {
+    from {
+        transform: translate3d(100px, 60px, 0) rotate(55deg);
+    }
+    to {
+        transform: translate3d(0, 0, 0) rotate(0deg);
+    }
+}
+
+@keyframes card-10-2 {
+    from {
+        transform: translate3d(130px, 70px, 0) rotate(65deg);
+    }
+    to { 
+        transform: translate3d(0, 0, 0) rotate(0deg);
+    }
+}
+
+.card-1-2 {
+    animation: forwards;
+    animation-name: card-1-2;
+    animation-duration: 5s;
+}
+
+.card-2-2 {
+    animation: forwards;
+    animation-name: card-2-2;
+    animation-duration: 5s;
+}
+
+.card-3-2 {
+    animation: forwards;
+    animation-name: card-3-2;
+    animation-duration: 5s;
+}
+
+.card-4-2 {
+    animation: forwards;
+    animation-name: card-4-2;
+    animation-duration: 5s;
+}
+
+.card-6-2 {
+    animation: forwards;
+    animation-name: card-6-2;
+    animation-duration: 5s;
+}
+
+.card-7-2 {
+    animation: forwards;
+    animation-name: card-7-2;
+    animation-duration: 5s;
+}
+
+.card-8-2 {
+    animation: forwards;
+    animation-name: card-8-2;
+    animation-duration: 5s;
+}
+
+.card-9-2 {
+    animation: forwards;
+    animation-name: card-9-2;
+    animation-duration: 5s;
+}
+
+.card-10-2 {
+    animation: forwards;
+    animation-name: card-10-2;
+    animation-duration: 5s;
+}

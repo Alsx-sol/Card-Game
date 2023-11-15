@@ -1,0 +1,76 @@
+<div *ngIf="current_page == 'title'" class="game-background">
+  <div>
+    <p class="game-title">Jeu de cartes</p>
+  </div>
+  <div class="card-body">
+    <div>
+      <img class="card title-card-left" src="/assets/img/as_coeur.png">
+    </div>
+    <div>
+      <img class="card title-card-right" src="/assets/img/roi_trefle.png">
+    </div>
+  </div>
+  <div class="bouton-tirer-cartes" (click)="drawMyHand()">
+    Tirer vos cartes
+  </div>
+</div>
+
+<div *ngIf="current_page == 'unsorted_hand'" class="game-background">
+  <div>
+    <p class="game-title">Jeu de cartes</p>
+  </div>
+
+  <div class="card-sort-body">
+    <div>
+      <img [ngClass]="{'card-1': !this.cards_folded, 'card-1-2' : this.cards_folded, 'card-sort': true, 'card': true}" src={{myHand.at(0)}}>
+    </div>
+    <div>
+      <img [ngClass]="{'card-2': !this.cards_folded, 'card-2-2' : this.cards_folded, 'card-sort': true, 'card': true}" src={{myHand.at(1)}}>
+    </div>
+    <div>
+      <img [ngClass]="{'card-3': !this.cards_folded, 'card-3-2' : this.cards_folded, 'card-sort': true, 'card': true}" src={{myHand.at(2)}}>
+    </div>
+    <div>
+      <img [ngClass]="{'card-4': !this.cards_folded, 'card-4-2' : this.cards_folded, 'card-sort': true, 'card': true}" src={{myHand.at(3)}}>
+    </div>
+    <div>
+      <img [ngClass]="{'card-5': !this.cards_folded, 'card-5-2' : this.cards_folded, 'card-sort': true, 'card': true}" src={{myHand.at(4)}}>
+    </div>
+    <div>
+      <img [ngClass]="{'card-6': !this.cards_folded, 'card-6-2' : this.cards_folded, 'card-sort': true, 'card': true}" src={{myHand.at(5)}}>
+    </div>
+    <div>
+      <img [ngClass]="{'card-7': !this.cards_folded, 'card-7-2' : this.cards_folded, 'card-sort': true, 'card': true}" src={{myHand.at(6)}}>
+    </div>
+    <div>
+      <img [ngClass]="{'card-8': !this.cards_folded, 'card-8-2' : this.cards_folded, 'card-sort': true, 'card': true}" src={{myHand.at(7)}}>
+    </div>
+    <div>
+      <img [ngClass]="{'card-9': !this.cards_folded, 'card-9-2' : this.cards_folded, 'card-sort': true, 'card': true}" src={{myHand.at(8)}}>
+    </div>
+    <div>
+      <img [ngClass]="{'card-10': !this.cards_folded, 'card-10-2' : this.cards_folded, 'card-sort': true, 'card': true}" src={{myHand.at(9)}}>
+    </div>
+  </div>
+
+  <div class="bouton-tirer-cartes" (click)="sortMyHand()">
+    Trier
+  </div>
+</div>
+
+<div *ngIf="current_page == 'sorted_hand'" class="game-background">
+  <div>
+    <p class="game-title">Jeu de cartes</p>
+  </div>
+  <div class="card-sort-body">
+      <div *ngFor="let card of myHand; let i = index">
+        <img class="card card-{{i + 1}} card-sort" src={{card}}>
+      </div>
+      
+  </div>
+  <div class="bouton-tirer-cartes" (click)="current_page = 'title'">
+    Rejouez ?
+  </div>
+  <div class="show-order">Ordre des symboles: {{myRandomSymbolsOrder}}</div>
+  <div class="show-order">Ordre des valeurs: {{myRandomValuesOrder}}</div>
+</div>
